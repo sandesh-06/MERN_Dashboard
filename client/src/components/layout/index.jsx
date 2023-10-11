@@ -37,6 +37,7 @@ const Layout = () => {
           setIsSidebarOpen={setIsSidebarOpen}
         />
         <Outlet />
+        {/* outlet acts like {children}, i.e its for the child routes wrapped in Layout */}
       </Box>
     </Box>
   );

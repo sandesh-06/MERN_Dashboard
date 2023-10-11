@@ -68,7 +68,7 @@ export const tokensDark = {
         mode: mode,
         ...(mode === "dark"
           ? {
-              // palette values for dark mode
+              // if mode is 'dark' then this will be the palette
               primary: {
                 ...tokensDark.primary,
                 main: tokensDark.primary[400],
@@ -88,7 +88,7 @@ export const tokensDark = {
               },
             }
           : {
-              // palette values for light mode
+               // if mode is 'light' then this will be the palette
               primary: {
                 ...tokensLight.primary,
                 main: tokensDark.grey[50],
