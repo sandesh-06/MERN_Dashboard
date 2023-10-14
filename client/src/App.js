@@ -9,6 +9,12 @@ import { themeSettings } from "theme";
 
 import Layout from "components/layout";
 import Dashboard from "components/dashboard";
+import Products from "components/products";
+import Customers from "components/customers";
+import Transactions from "components/transactions";
+import Geography from "components/geography";
+import Overview from "components/overview";
+import Daily from "components/daily";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -27,6 +33,12 @@ function App() {
 
               <Route path="/" element={<Navigate to="/dashboard" replace/>}/>
               <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="/products" element={<Products/>}/>
+              <Route path="/customers" element={<Customers/>}/>
+              <Route path="/transactions" element={<Transactions/>}/>
+              <Route path="/geography" element={<Geography/>}/>
+              <Route path="/overview" element={<Overview/>}/>
+              <Route path="/daily" element={<Daily/>}/>
 
             </Route>
           </Routes>

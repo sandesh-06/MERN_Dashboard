@@ -1,8 +1,16 @@
-const express = require('express')
+import express from "express";
+import {
+  getProducts,
+  getCustomers,
+  getTransactions,
+  getGeography,
+} from "../controllers/client.mjs";
+
 const router = express.Router();
 
+router.get("/products", getProducts);
+router.get("/customers", getCustomers);
+router.get("/transactions", getTransactions);
+router.get("/geography", getGeography);
 
-
-
-
-module.exports = router;
+export default router;

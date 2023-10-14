@@ -127,6 +127,7 @@ const Sidebar = ({
                 boxSixing: "border-box",
                 borderWidth: isNotMobile ? 0 : "2px",
                 width: drawerWidth,
+                overflow: 'hidden'
               },
             }}
           >
