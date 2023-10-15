@@ -1,13 +1,13 @@
 import React from "react";
 import { Box, useTheme } from "@mui/material";
-import { useGetCustomersQuery } from "state/api";
-import Header from "reuseableComponents/Header";
+import { useGetAdminsQuery } from "state/api";
 import { DataGrid } from "@mui/x-data-grid";
+import Header from "reuseableComponents/Header";
 
-const Customers = () => {
+
+const Admin = () => {
   const theme = useTheme();
-  const { data, isLoading } = useGetCustomersQuery();
-//   console.log("data", data);
+  const { data, isLoading } = useGetAdminsQuery();
 
   const columns = [
     {
@@ -52,11 +52,10 @@ const Customers = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="CUSTOMERS" subtitle="List of Customers" />
+      <Header title="ADMINS" subtitle="Managing admins and list of admins" />
       <Box
         mt="40px"
         height="75vh"
-        //targeting each class using the inspect element to style the grid
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -83,8 +82,8 @@ const Customers = () => {
         }}
       >
         <DataGrid
-          loading={isLoading || !data} //shows a spinner while loading
-          getRowId={(row) => row._id} //takes the id form the 'data' object
+          loading={isLoading || !data}
+          getRowId={(row) => row._id}
           rows={data || []}
           columns={columns}
         />
@@ -93,4 +92,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Admin;

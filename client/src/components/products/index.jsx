@@ -11,10 +11,9 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import Header from "actualComponents/Header";
+import Header from "reuseableComponents/Header";
 import { useGetProductsQuery } from "state/api";
 
-//creating a card component to display in products page
 const Product = ({
   _id,
   name,
@@ -40,7 +39,7 @@ const Product = ({
         <Typography
           sx={{ fontSize: 14 }}
           color={theme.palette.secondary[700]}
-          gutterBottom //sets a tiny margin at the bottom
+          gutterBottom
         >
           {category}
         </Typography>
@@ -48,14 +47,12 @@ const Product = ({
           {name}
         </Typography>
         <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
-          ${Number(price).toFixed(2)}{" "}
-          {/*Converting the string to a number with only 2 decimal values*/}
+          ${Number(price).toFixed(2)}
         </Typography>
-        <Rating value={rating} readOnly />{" "}
-        {/* gives the rating component in readOnly mode - check docs*/}
+        <Rating value={rating} readOnly />
+
         <Typography variant="body2">{description}</Typography>
       </CardContent>
-
       <CardActions>
         <Button
           variant="primary"
@@ -73,7 +70,6 @@ const Product = ({
           color: theme.palette.neutral[300],
         }}
       >
-        {/* content after see more */}
         <CardContent>
           <Typography>id: {_id}</Typography>
           <Typography>Supply Left: {supply}</Typography>
@@ -90,10 +86,10 @@ const Product = ({
 };
 
 const Products = () => {
-  //isLoading is a function provided by redux-toolkit-query
   const { data, isLoading } = useGetProductsQuery();
-  const isNonMobile = useMediaQuery("(min-width: 1000px)");
   // console.log(data)
+  const isNonMobile = useMediaQuery("(min-width: 1000px)");
+
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products." />
@@ -106,12 +102,10 @@ const Products = () => {
           rowGap="20px"
           columnGap="1.33%"
           sx={{
-            // targeting the immediate div, and saying it to take all the 4cols for a mobile screen
             "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
           }}
         >
           {data.map(
-            // destructring the 'data' object
             ({
               _id,
               name,
@@ -137,7 +131,6 @@ const Products = () => {
           )}
         </Box>
       ) : (
-        // display this if isLoading is true
         <>Loading...</>
       )}
     </Box>

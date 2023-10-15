@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import DataGridCustomToolbar from "actualComponents/DataGridCustomToolbar";
-import Header from "actualComponents/Header";
+import DataGridCustomToolbar from "reuseableComponents/DataGridCustomToolbar";
+import Header from "reuseableComponents/Header";
 import { useGetTransactionsQuery } from "state/api";
 import { useTheme } from "@emotion/react";
 import { Box } from "@mui/material";

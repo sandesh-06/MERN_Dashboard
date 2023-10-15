@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, useTheme } from "@mui/material";
 import { useGetGeogrpahyQuery } from "state/api";
-import Header from "actualComponents/Header";
+import Header from "reuseableComponents/Header";
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { geoData } from "state/geoData";
 

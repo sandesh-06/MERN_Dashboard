@@ -15,6 +15,10 @@ import Transactions from "components/transactions";
 import Geography from "components/geography";
 import Overview from "components/overview";
 import Daily from "components/daily";
+import Monthly from "components/monthly";
+import Breakdown from "components/breakdown";
+import Admin from "components/admins";
+import Performance from "components/performance";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -39,6 +43,10 @@ function App() {
               <Route path="/geography" element={<Geography/>}/>
               <Route path="/overview" element={<Overview/>}/>
               <Route path="/daily" element={<Daily/>}/>
+              <Route path="/monthly" element={<Monthly/>}/>
+              <Route path="/breakdown" element={<Breakdown/>}/>
+              <Route path="/admin" element={<Admin/>}/>
+              <Route path="/performance" element={<Performance/>}/>
 
             </Route>
           </Routes>

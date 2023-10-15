@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Navbar from "actualComponents/Navbar";
-import Sidebar from "actualComponents/Sidebar";
+import Navbar from "reuseableComponents/Navbar";
+import Sidebar from "reuseableComponents/Sidebar";
 import { useGetUserQuery } from "state/api";
 const Layout = () => {
   //to check whthr the display is mobile or not

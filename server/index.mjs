@@ -9,15 +9,17 @@ import morgan from "morgan";
 import generalRoutes from "./routes/general.mjs";
 import clientRoutes from "./routes/client.mjs"
 import salesRoutes from "./routes/sales.mjs"
-
+import managementRoutes from "./routes/management.mjs"
 
 // data imports
-// import User from "./model/User.mjs";
-import {dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat} from "./data/index.mjs"
+import User from "./model/User.mjs";
 import Product from "./model/Product.mjs";
 import ProductStat from "./model/ProductStat.mjs";
 import Transaction from "./model/Transaction.mjs";
 import OverallStat from "./model/OverallStat.mjs";
+import AffiliateStat from "./model/AffiliateStat.mjs";
+import {dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat, dataAffiliateStat} from "./data/index.mjs"
+
 /* CONFIGURATION */
 dotenv.config();
 const app = express();
@@ -32,7 +34,7 @@ app.use(cors());
 /* ROUTES */
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
-// app.use("/management", managementRoutes);
+app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
 
@@ -53,6 +55,7 @@ const connectToMongo = async()=>{
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
     // OverallStat.insertMany(dataOverallStat)
+    // AffiliateStat.insertMany(dataAffiliateStat)
 
 }
 
